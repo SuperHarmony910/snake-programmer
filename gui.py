@@ -3,7 +3,7 @@
 import tkinter as tk
 master = Tk()
 window = tk.Tk()
-entry = tk.Entry 
+entry = tk.Entry(root)
 name = entry.get
 
 greeting_str = tk.Label(text="Hello " + name + "!")
