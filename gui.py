@@ -4,8 +4,9 @@ import tkinter as tk
 window = tk.Tk()
 entry = tk.Entry 
 result = entry.get
-name.config(text=result)
-entry.delete(0,END)
+name = "null"
+name = result
+
 
 greet_me = tk.Label(text="Hello " + name + "!")
 
