@@ -1,31 +1,25 @@
-# Credits to https://datatofish.com/entry-box-tkinter/, https://realpython.com/python-gui-tkinter/, https://realpython.com/run-python-scripts
-# Current issues: entry.get dysfunctional, button in wrong pos!
+# Credits to Data to Fish: https://datatofish.com/entry-box-tkinter/, RealPython: https://realpython.com/python-gui-tkinter/, https://realpython.com/run-python-scripts
+# Current issues: entry.get dysfunctional, def greeting dysfunctional!
 
 import tkinter as tk
+
 master = tk.Tk()
 
-entry = tk.Entry
-
-canvas1 = tk.Canvas(master, width = 400, height = 300)
+canvas1 = tk.Canvas(master, width = 400, height = 300, relief = 'raised')
 canvas1.pack()
-canvas1.create_window(200, 140, window=entry)
 
-result = entry.get
-name = "null"
-name == result
-master.title("Greetings!") 
+entry1 = tk.Entry (master) 
+canvas1.create_window(200, 25, window=entry1)
 
-entry.pack
+def greeting ():  
+    name = entry1.get()
+    
+    greet_me = tk.Label(master, text = float(name))
+    greet_me.config(font=('helvetica', 10))
 
-greet_me = tk.Label(window, text="Hello " + name + "!")
+    canvas1.create_window(200, 230, window=greet_me)
+    
+button1 = tk.Button(text='Greetings!', command=greeting)
+canvas1.create_window(200, 180, window=button1)
 
-def greeting():
-    name = entry.get
-    greet_me.place(relx = 0.5, rely = 0.8)
-
-button1 = tk.Button(window, text="Click me once you've typed your name! ", command=greeting)
-button1.place(height=50, width=400, relx = 0.4, rely = 0.4)
-entry.delete
-
-master.geometry("200x200") 
-mainloop()
+master.mainloop()
