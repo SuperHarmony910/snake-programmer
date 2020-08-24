@@ -3,9 +3,13 @@
 
 import tkinter as tk
 master = tk.Tk()
+
 entry = tk.Entry
+
+canvas1 = tk.Canvas(master, width = 400, height = 300)
+canvas1.pack()
 canvas1.create_window(200, 140, window=entry)
-entry.delete
+
 result = entry.get
 name = "null"
 name == result
@@ -17,10 +21,11 @@ greet_me = tk.Label(window, text="Hello " + name + "!")
 
 def greeting():
     name = entry.get
- greet_me.place(relx = 0.5, rely = 0.8)
+    greet_me.place(relx = 0.5, rely = 0.8)
 
 button1 = tk.Button(window, text="Click me once you've typed your name! ", command=greeting)
 button1.place(height=50, width=400, relx = 0.4, rely = 0.4)
+entry.delete
 
 master.geometry("200x200") 
 mainloop()
