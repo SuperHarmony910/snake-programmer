@@ -1,4 +1,4 @@
-# Tinkering around with DataToFish: atatofish.com/entry-box-tkinter/'s demonstration.
+# Tinkering around with DataToFish: datatofish.com/entry-box-tkinter/'s demonstration.
 
 import tkinter as tk
 
