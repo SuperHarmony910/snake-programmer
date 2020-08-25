@@ -9,20 +9,24 @@ master.title("Greetings!")
 canvas1 = tk.Canvas(master, width = 400, height = 300)
 canvas1.pack()
 
+heading = tk.Label(master, text='Greetings!')
+heading.config(font=('helvetica', 14))
+canvas1.create_window(200, 25, window=heading)
+
 canvas2 = tk.Canvas(master, width = 400, height = 300)
 
 entry1 = tk.Entry(master) 
 canvas1.create_window(200, 145, window=entry1)
 
-name = entry1.get()
+name = entry1.get() 
 
-greet_me = tk.Label(master, text = "Hello " + name + "!")
+greet_me = tk.Label(master, text = "Hello " + (name) + "!")
 greet_me.config(font=('helvetica', 10))
     
 def greeting ():
-    canvas1.create_window(200, 230, window=greet_me)
+    canvas1.create_window(200, 260, window=greet_me)
     
 button1 = tk.Button(text='Greetings!', command=greeting, bg='red', fg='white')
-canvas1.create_window(200, 120, window=button1)
+canvas1.create_window(200, 200, window=button1)
 
 master.mainloop()
