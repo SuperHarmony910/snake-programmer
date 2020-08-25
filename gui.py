@@ -16,7 +16,7 @@ canvas1.create_window(200, 25, window=heading)
 canvas2 = tk.Canvas(master, width = 400, height = 300)
 
 entry1 = tk.Entry(master) 
-canvas1.create_window(200, 145, window=entry1)
+canvas1.create_window(200, 145, window=entry1) 
 
 name = entry1.get() 
 
