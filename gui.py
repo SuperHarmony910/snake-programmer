@@ -10,7 +10,7 @@ canvas1 = tk.Canvas(master, width = 400, height = 300)
 canvas1.pack()
 
 heading = tk.Label(master, text='Greetings!')
-heading.config(font=('helvetica', 14))
+heading.config(font=('helvetica', 14)) 
 canvas1.create_window(200, 25, window=heading)
 
 canvas2 = tk.Canvas(master, width = 400, height = 300)
