@@ -1,6 +1,6 @@
 # Tinkering around with DataToFish: datatofish.com/entry-box-tkinter/'s demonstration.
 
-import tkinter as tk
+import tkinter as tk 
 
 root = tk.Tk()
 
