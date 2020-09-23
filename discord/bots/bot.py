@@ -6,12 +6,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+GUILD = os.getenv('DISCORD_GUILD')
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
-    print(f'{client.user.name} has connected to Discord!')
+    print(f'{client.user.name} is currently active on Discord!')
 
 
 @client.event
@@ -26,6 +27,18 @@ async def on_message(message):
 async def on_message(message):
         if 'poop' in message.content.lower():
             await message.channel.send('💩');
-        
+
+        if '!link' in message.content.lower():
+            await message.channel.send('https://github.com/SuperHarmony910 Shameless plug!');
+
+@client.event
+async def on_message(message):
+
+    if message.content.startswith('!members'):
+
+        for guild in client.guilds:
+
+            for member in guild.members:
+                await message.channel.send(member)
            
 client.run(TOKEN)
