@@ -17,8 +17,6 @@ client = discord.Client();
 async def on_ready():
     print(f'{client.user} has connected to Discord!');
 
-# Will commands be created in @client.event?
-
 @client.event
 async def on_message(message):
         if message.author == client.user:
@@ -40,7 +38,7 @@ async def on_message(message):
         if message.content.startswith('hello'):
             await message.channel.send('Hello! 👋')
 
-client = commands.Bot(command_prefix = "!")
+client = commands.Bot(command_prefix = "./")
 
 @client.command(
      link = "https://github.com/SuperHarmony910 Shameless plug!"
