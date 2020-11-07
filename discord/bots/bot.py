@@ -17,8 +17,6 @@ client = discord.Client();
 async def on_ready():
     print(f'{client.user} has connected to Discord!');
 
-# Will commands be created in @client.event?
-
 @client.event
 async def on_message(message):
         if message.author == client.user:
@@ -27,12 +25,12 @@ async def on_message(message):
         if message.content.startswith('poop'):
             await message.channel.send('💩');
 
-        if message.content.startswith('!members'):
+        if message.content.startswith('./members'):
             for guild in client.guilds:
                 for member in guild.members:
                     await message.channel.send(member)
 
-        if message.content.startswith('!name'):
+        if message.content.startswith('./name'):
            for guild in client.guilds:
                 for name in guild.name:
                     await message.channel.send(name)
@@ -40,7 +38,7 @@ async def on_message(message):
         if message.content.startswith('hello'):
             await message.channel.send('Hello! 👋')
 
-client = commands.Bot(command_prefix = "!")
+client = commands.Bot(command_prefix = "./")
 
 @client.command(
      link = "https://github.com/SuperHarmony910 Shameless plug!"
@@ -52,5 +50,6 @@ async def print(ctx, *args):
 		response = response + " " + arg
 
 	await ctx.channel.send(response)
+
 
 client.run(TOKEN)
