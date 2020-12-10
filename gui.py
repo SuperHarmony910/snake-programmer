@@ -13,17 +13,16 @@ heading = tk.Label(master, text='Greetings!')
 heading.config(font=('helvetica', 14)) 
 canvas1.create_window(200, 25, window=heading)
 
-canvas2 = tk.Canvas(master, width = 400, height = 300)
+canvas2 = tk.Canvas(master, width = 400, height = 100)
+canvas2.pack()
 
 entry1 = tk.Entry(master) 
 canvas1.create_window(200, 145, window=entry1) 
-
-name = entry1.get() 
-
-greet_me = tk.Label(master, text = "Hello " + (name) + "!")
-greet_me.config(font=('helvetica', 10))
     
 def greeting ():
+    name = entry1.get()
+    greet_me = tk.Label(master, text='Hello ' + name + '!', fg='lime', font=('monospace', 12, 'bold'))
+    greet_me.config(font=('monospace', 12, 'bold'))
     canvas1.create_window(200, 260, window=greet_me)
     
 button1 = tk.Button(text='Greetings!', command=greeting, bg='red', fg='white')

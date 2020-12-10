@@ -1,8 +1,6 @@
-# bot.py
+# SuperHarmony910's first Discord bot.
 import os
 import random
-
-
 from discord.ext import commands
 import discord
 from dotenv import load_dotenv
@@ -15,7 +13,9 @@ client = discord.Client();
 
 @client.event
 async def on_ready():
-    print(f'{client.user} has connected to Discord!');
+    print(f'{client.user} has connected to Discord!')
+
+client = commands.Bot(command_prefix='./')
 
 @client.event
 async def on_message(message):
@@ -25,12 +25,12 @@ async def on_message(message):
         if message.content.startswith('poop'):
             await message.channel.send('💩');
 
-        if message.content.startswith('./members'):
+        if message.content.startswith('!members'):
             for guild in client.guilds:
-                for member in guild.members:
-                    await message.channel.send(member)
+                for members in guild.members:
+                    await message.channel.send(members)
 
-        if message.content.startswith('./name'):
+        if message.content.startswith('!name'):
            for guild in client.guilds:
                 for name in guild.name:
                     await message.channel.send(name)
@@ -38,11 +38,10 @@ async def on_message(message):
         if message.content.startswith('hello'):
             await message.channel.send('Hello! 👋')
 
-client = commands.Bot(command_prefix = "./")
 
-@client.command(
-     link = "https://github.com/SuperHarmony910 Shameless plug!"
-)
+
+
+@client.command()
 async def print(ctx, *args):
 	response = ""
 
@@ -50,6 +49,12 @@ async def print(ctx, *args):
 		response = response + " " + arg
 
 	await ctx.channel.send(response)
+
+async def on_message(message):
+    link = "https://github.com/SuperHarmony910 Shameless plug!"
+    if message.content('link'):
+        await ctx.channel.send(link)
+
 
 
 client.run(TOKEN)
