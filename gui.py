@@ -1,5 +1,5 @@
 # Credits to Data to Fish: https://datatofish.com/entry-box-tkinter/, RealPython: https://realpython.com/python-gui-tkinter/, https://realpython.com/run-python-scripts
-# Current issues: entry.get dysfunctional!
+#TODO More functionality, an epilogue and more goddamn style tbh.
 
 import tkinter as tk
 
