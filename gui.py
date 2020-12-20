@@ -17,11 +17,14 @@ canvas2 = tk.Canvas(master, width = 400, height = 100)
 canvas2.pack()
 
 entry1 = tk.Entry(master) 
+entry1.insert(0, '<enter-name>')
 canvas1.create_window(200, 145, window=entry1) 
+
+#TODO Placeholder mouse click event here!
     
 def greeting ():
     name = entry1.get()
-    greet_me = tk.Label(master, text='Hello ' + name + '!', fg='lime', font=('monospace', 12, 'bold'))
+    greet_me = tk.Label(master, text='Hello ' + name + '!', fg='lime', font=('monospace', 14, 'bold'))
     greet_me.config(font=('monospace', 12, 'bold'))
     canvas1.create_window(200, 260, window=greet_me)
     
