@@ -2,6 +2,7 @@
 #TODO More functionality, an epilogue and more goddamn style tbh.
 
 import tkinter as tk
+import tkinter.font as TkFont
 
 master = tk.Tk()
 
@@ -10,9 +11,11 @@ master.title("Greetings!")
 canvas1 = tk.Canvas(master, width = 400, height = 300)
 canvas1.pack()
 
+# Font config
+mono18 = tkFont.Font(family="monospace", size=36, weight="bold")
+
 # Canvas creation
-heading = tk.Label(master, text='Greetings!')
-heading.config(font=('helvetica', 14)) 
+heading = tk.Label(master, text='Greetings!', font='mono18')
 canvas1.create_window(200, 25, window=heading)
 
 canvas2 = tk.Canvas(master, width = 400, height = 100)
@@ -30,7 +33,7 @@ canvas1.create_window(200, 145, window=entry1)
 def greeting ():
     name = entry1.get()
     greet_me = tk.Label(master, text='Hello ' + name + '!', fg='lime', font=('monospace', 14, 'bold'))
-    greet_me.config(font=('monospace', 12, 'bold'))
+    greet_me.config(font=('monospacepy', 12, 'bold'))
     canvas1.create_window(200, 260, window=greet_me)
     canvas2.create_window(400, 325, window=test)
     
