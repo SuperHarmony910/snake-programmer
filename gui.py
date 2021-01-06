@@ -1,6 +1,6 @@
 # Credits to Data to Fish: https://datatofish.com/entry-box-tkinter/, RealPython: https://realpython.com/python-gui-tkinter/, https://realpython.com/run-python-scripts, and many Stack Overflow articles, notably: https://stackoverflow.com/questions/45217057/how-to-add-a-placeholder-in-tkinter/45218059
 # There are certain commented characters within this program. I shall denote them here: ^ = Required placement of code, only used when defies code comment organisation.
-#TODO More functionality, an epilogue and more goddamn style tbh.
+#TODO More functionality, an epilogue and more goddamn style tbh. Light grey placeholder if possible
 
 from tkinter import *
 from tkinter.ttk import *
@@ -11,6 +11,7 @@ import tkinter.font as tkFont
 # ^
 def clear_entry(event, entry):
     entry.delete(0, END)
+    entry1.unbind('<Button-1>', click_event)
 
 main = tk.Tk()
 # Special setup stuff
@@ -37,17 +38,25 @@ entry1 = tk.Entry(main, width = 32)
 placeholder_text = 'Enter your name here!'
 entry1.insert(0, placeholder_text)
 
-entry1.bind("<Button-1>", lambda event: clear_entry(event, entry1))
+click_event = entry1.bind("<Button-1>", lambda event: clear_entry(event, entry1))
 
 test = tk.Label(main, text="test")
 
 canvas1.create_window(200, 145, window=entry1)
    
 # Functions start
+def forget(input):
+    input.forget()
+
+def retrieve(input1):
+    input1.pack(fill = BOTH, expand = True)
+
 def greeting ():
     name = entry1.get()
     greet_me = tk.Label(main, text='Hello ' + name + '!', fg='lime', font=('monospace', 14, 'bold'))
-    greet_me.config(font=('monospacepy', 12, 'bold'))
+    greet_me.config(font=('monospace', 12, 'bold'))
+    forget(greet_me)
+    greet_me.pack(fill = BOTH, expand = True) 
     canvas1.create_window(200, 260, window=greet_me)
     canvas2.create_window(400, 325, window=test)
     
