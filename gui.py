@@ -1,5 +1,5 @@
 # Credits to Data to Fish: https://datatofish.com/entry-box-tkinter/, RealPython: https://realpython.com/python-gui-tkinter/, https://realpython.com/run-python-scripts, and many Stack Overflow articles, notably: https://stackoverflow.com/questions/45217057/how-to-add-a-placeholder-in-tkinter/45218059
-# There are certain commented characters within this program. I shall denote them here: ^ = Required placement of code, only used when defies code comment organisation.
+# There are certain commented characters within this program,em here: ^ = Required placement of code, only used when defies code comment organisation.
 #TODO More functionality, an epilogue and more goddamn style tbh. Light grey placeholder if possible
 
 from tkinter import *
@@ -18,7 +18,6 @@ main = tk.Tk()
 main.title("Greetings!")
 
 mainFrame = tk.Frame(main, width = 100, height = 400)
-
 canvas1 = tk.Canvas(main, width = 400, height = 300)
 canvas1.pack()
 
@@ -34,7 +33,7 @@ canvas2 = tk.Canvas(main, width = 400, height = 100)
 canvas2.pack()
 
 # Adding to structures
-entry1 = tk.Entry(main, width = 32) 
+entry1 = tk.Entry(main, width = 32)
 placeholder_text = 'Enter your name here!'
 entry1.insert(0, placeholder_text)
 
@@ -43,23 +42,29 @@ click_event = entry1.bind("<Button-1>", lambda event: clear_entry(event, entry1)
 test = tk.Label(main, text="test")
 
 canvas1.create_window(200, 145, window=entry1)
-   
+
 # Functions start
 def forget(input):
     input.forget()
 
-def retrieve(input1):
-    input1.pack(fill = BOTH, expand = True)
+def retrieve(input):
+    input.pack(fill = BOTH, expand = True)
 
-def greeting ():
+def greeting():
     name = entry1.get()
     greet_me = tk.Label(main, text='Hello ' + name + '!', fg='lime', font=('monospace', 14, 'bold'))
     greet_me.config(font=('monospace', 12, 'bold'))
     forget(greet_me)
-    greet_me.pack(fill = BOTH, expand = True) 
+    greet_me.pack(fill = BOTH, expand = True)
     canvas1.create_window(200, 260, window=greet_me)
     canvas2.create_window(400, 325, window=test)
-    
+    clear_entry(event, entry1)
+
+# This is to clear the entry box once the name has been submitted
+def all():
+    greeting()
+    clear_entry(event, entry1)
+
 button1 = tk.Button(text='Greetings!', command=greeting, bg='red', fg='white')
 canvas1.create_window(200, 200, window=button1)
 
