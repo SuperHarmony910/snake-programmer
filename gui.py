@@ -50,20 +50,22 @@ def forget(input):
 def retrieve(input):
     input.pack(fill = BOTH, expand = True)
 
+def enter(event):
+    greeting()
+main.bind('<Return>', enter)
+
 def greeting():
     name = entry1.get()
     greet_me = tk.Label(main, text='Hello ' + name + '!', fg='lime', font=('monospace', 14, 'bold'))
     greet_me.config(font=('monospace', 12, 'bold'))
-    forget(greet_me)
-    greet_me.pack(fill = BOTH, expand = True)
     canvas1.create_window(200, 260, window=greet_me)
     canvas2.create_window(400, 325, window=test)
-    clear_entry(event, entry1)
+    clear_entry(entry1)
 
 # This is to clear the entry box once the name has been submitted
 def all():
     greeting()
-    clear_entry(event, entry1)
+    clear_entry(entry1)
 
 button1 = tk.Button(text='Greetings!', command=greeting, bg='red', fg='white')
 canvas1.create_window(200, 200, window=button1)
