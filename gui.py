@@ -1,6 +1,6 @@
 # Credits to Data to Fish: https://datatofish.com/entry-box-tkinter/, RealPython: https://realpython.com/python-gui-tkinter/, https://realpython.com/run-python-scripts, and many Stack Overflow articles, notably: https://stackoverflow.com/questions/45217057/how-to-add-a-placeholder-in-tkinter/45218059
 # There are certain commented characters within this program,em here: ^ = Required placement of code, only used when defies code comment organisation.
-#TODO More functionality, an epilogue and more goddamn style tbh. Light grey placeholder if possible
+#TODO More functionality, an epilogue and more damn style tbh. Light grey placeholder if possible
 
 from tkinter import *
 from tkinter.ttk import *
