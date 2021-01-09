@@ -56,7 +56,7 @@ main.bind('<Return>', enter)
 
 def greeting():
     name = entry1.get()
-    greet_me = tk.Label(main, text='Hello ' + name + '!', fg='lime', font=('monospace', 14, 'bold'))
+    greet_me = tk.Label(main, text='Hello ' + name + '!', fg='#000080', font=('monospace', 14, 'bold'))
     greet_me.config(font=('monospace', 12, 'bold'))
     canvas1.create_window(200, 260, window=greet_me)
     canvas2.create_window(400, 325, window=test)
