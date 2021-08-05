@@ -1,0 +1,85 @@
+{
+    "id": "silly",
+    "metadata": {
+        "operation": "retrieve",
+        "provider": "Oxford University Press",
+        "schema": "RetrieveEntry"
+    },
+    "results": [
+        {
+            "id": "silly",
+            "language": "en-gb",
+            "lexicalEntries": [
+                {
+                    "entries": [
+                        {
+                            "senses": [
+                                {
+                                    "definitions": [
+                                        "having or showing a lack of common sense or judgement; absurd and foolish"
+                                    ],
+                                    "id": "m_en_gbus0945670.006",
+                                    "subsenses": [
+                                        {
+                                            "definitions": [
+                                                "ridiculously trivial or frivolous"
+                                            ],
+                                            "id": "m_en_gbus0945670.010"
+                                        },
+                                        {
+                                            "definitions": [
+                                                "used to convey that an activity or process has been engaged in to such a degree that someone is no longer capable of thinking or acting sensibly"
+                                            ],
+                                            "id": "m_en_gbus0945670.011"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "definitions": [
+                                        "helpless; defenceless (typically used of a woman, child, or animal)."
+                                    ],
+                                    "id": "m_en_gbus0945670.014"
+                                },
+                                {
+                                    "definitions": [
+                                        "denoting fielding positions very close to the batsman"
+                                    ],
+                                    "id": "m_en_gbus0945670.016"
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en-gb",
+                    "lexicalCategory": {
+                        "id": "adjective",
+                        "text": "Adjective"
+                    },
+                    "text": "silly"
+                },
+                {
+                    "entries": [
+                        {
+                            "senses": [
+                                {
+                                    "definitions": [
+                                        "a foolish person (often used as a form of address)"
+                                    ],
+                                    "id": "m_en_gbus0945670.029"
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en-gb",
+                    "lexicalCategory": {
+                        "id": "noun",
+                        "text": "Noun"
+                    },
+                    "text": "silly"
+                }
+            ],
+            "type": "headword",
+            "word": "silly"
+        }
+    ],
+    "word": "silly"
+}
